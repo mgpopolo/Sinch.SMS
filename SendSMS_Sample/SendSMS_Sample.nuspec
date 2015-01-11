@@ -5,11 +5,12 @@
       <group targetFramework="net45">
         <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.2" />
         <dependency id="Newtonsoft.Json" version="6.0.4" />
+        <dependency id="Sinch.SMS" version="0.1.9.1" />
       </group>
     </dependencies>
-    <id>Sinch.SMS</id>
+    <id>SendSMS_Sample</id>
     <version>0.1.9.2</version>
-    <title>Sinch.SMS</title>
+    <title>SendSMS_Sample</title>
     <authors>Sinch AB</authors>
     <description>Helper library to send SMS using signed request with Sinch rest API.
 
@@ -22,9 +23,8 @@ For sample usage see https://github.com/sinch/Sinch.SMS</summary>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <copyright>Copyright ©  2015</copyright>
-    <tags>SMS, Sinch, Twilio, Nexmo, Plivo</tags>
   </metadata>
   <files>
-    <file src="C:\Users\Christian\documents\visual studio 2013\Projects\Sinch.SMS\Sinch.SMS\bin\Release\Sinch.SMS.dll" target="lib\net45" />
+    <file src="C:\Users\Christian\documents\visual studio 2013\Projects\Sinch.SMS\SendSMS_Sample\bin\Release\SendSMS_Sample.exe" target="lib\net45" />
   </files>
 </package>
