@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinch.SMS", "Sinch.SMS\Sinch.SMS.csproj", "{6E6AEB32-62A3-494F-AB81-0932CE745E34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinch.SMS.Tests", "Sinch.SMS.Tests\Sinch.SMS.Tests.csproj", "{13CC0108-A198-40BD-BDBF-B22E9E615459}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4516AC51-9EEA-4C37-BFE2-DBFD3C1ECFD3}"
+	ProjectSection(SolutionItems) = preProject
+		Sinch.SMS\Sinch.SMS.nuspec = Sinch.SMS\Sinch.SMS.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E6AEB32-62A3-494F-AB81-0932CE745E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6AEB32-62A3-494F-AB81-0932CE745E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6AEB32-62A3-494F-AB81-0932CE745E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6AEB32-62A3-494F-AB81-0932CE745E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13CC0108-A198-40BD-BDBF-B22E9E615459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13CC0108-A198-40BD-BDBF-B22E9E615459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13CC0108-A198-40BD-BDBF-B22E9E615459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13CC0108-A198-40BD-BDBF-B22E9E615459}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

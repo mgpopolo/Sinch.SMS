@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <dependencies>
+      <group targetFramework="net45">
+        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.2" />
+        <dependency id="Newtonsoft.Json" version="6.0.4" />
+      </group>
+    </dependencies>
+    <id>Sinch.SMS</id>
+    <version>0.1.9.1</version>
+    <title>Sinch.SMS</title>
+    <authors>Sinch AB</authors>
+    <description>Helperlibrary to send SMS using signed request with Sinch rest API</description>
+    <language />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>false</developmentDependency>
+    <copyright>Copyright ©  2015</copyright>
+  </metadata>
+  <files>
+    <file src="C:\Users\Christian\documents\visual studio 2013\Projects\Sinch.SMS\Sinch.SMS\bin\Release\Sinch.SMS.dll" target="lib\net45" />
+  </files>
+</package>
