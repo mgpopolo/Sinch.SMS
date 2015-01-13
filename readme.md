@@ -18,4 +18,4 @@ var result = await client.CheckStatus(messageid);
 
 ```
 
-Don't forget, to send an SMS you need an account with Sinch, sign up [here](#signup).
+And that's it. Any questions, email us at [support@sinch.com](mailto:support@sinch.com)
