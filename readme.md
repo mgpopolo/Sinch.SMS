@@ -1,6 +1,8 @@
 #Send SMS with Sinch nuget package.
 
-In package manager console run to following command
+First, you will need to [create a Sinch account](https://www.sinch.com/dashboard/#/signup) to get your app key and secret.
+
+Then in package manager console, run to following command
 ```PM> Install-Package Sinch.SMS```
 
 To send an SMS use  
