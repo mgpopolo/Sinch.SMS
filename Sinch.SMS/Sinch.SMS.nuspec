@@ -3,12 +3,13 @@
   <metadata>
     <dependencies>
       <group targetFramework="net45">
-        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.2" />
-        <dependency id="Newtonsoft.Json" version="6.0.4" />
+        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+        <dependency id="Newtonsoft.Json" version="7.0.1" />
+        <dependency id="Sinch.Core" version="1.0.5.0" />
       </group>
     </dependencies>
     <id>Sinch.SMS</id>
-    <version>0.1.9.2</version>
+    <version>1.1.0.0</version>
     <title>Sinch.SMS</title>
     <authors>Sinch AB</authors>
     <description>Helper library to send SMS using signed request with Sinch rest API.
@@ -21,10 +22,12 @@ For sample usage see https://github.com/sinch/Sinch.SMS</summary>
     <projectUrl>https://github.com/sinch/Sinch.SMS</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
+    <releaseNotes>minor bugfixes and added depency on sinch.core</releaseNotes>
     <copyright>Copyright ©  2015</copyright>
     <tags>SMS, Sinch, Twilio, Nexmo, Plivo</tags>
   </metadata>
   <files>
-    <file src="C:\Users\Christian\documents\visual studio 2013\Projects\Sinch.SMS\Sinch.SMS\bin\Release\Sinch.SMS.dll" target="lib\net45" />
+    <file src="C:\Users\Christian\Documents\Visual Studio 2013\Projects\Sinch.SMS\Sinch.SMS\bin\Release\Sinch.SMS.dll" target="lib\net45" />
+    <file src="C:\Users\Christian\Documents\Visual Studio 2013\Projects\Sinch.SMS\Sinch.SMS\bin\Release\Sinch.SMS.pdb" target="lib\net45" />
   </files>
 </package>

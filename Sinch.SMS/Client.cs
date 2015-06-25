@@ -8,83 +8,65 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sinch.SMS
-{
-    public class Client
-    {
+namespace Sinch.SMS {
+    public class Client {
         private string _applicationKey;
         private string _applicationSecret;
         private string baseURL = "https://messagingapi.sinch.com/v1/sms/";
-        public Client()
-        {
+        public Client() {
             throw new Exception("Client must be initialized with kay and secret");
         }
-        public Client(string applicationKey, string applicationSecret)
-        {
+        public Client(string applicationKey, string applicationSecret) {
             _applicationKey = applicationKey;
             _applicationSecret = applicationSecret;
         }
 
-        private string SignString(string stringtoSign)
-        {
-            var sha256 = new HMACSHA256(Convert.FromBase64String(_applicationSecret));
-            var signature = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(stringtoSign)));
-            return signature;
-        }
+        public async Task<int> SendSMS(string number, string message) {
 
-        private string SignRequest(string httpMethod, string requestBody, string url, string timeStamp)
-        {
-
-            string tosign = httpMethod + "\n" +
-                           Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(requestBody))) + "\n" +
-                           "application/json; charset=utf-8\n" +
-                           "x-timestamp:" + timeStamp + "\n" +
-                           url;
-            return _applicationKey + ":" + SignString(tosign);
-        }
-        private string SignGetRequest(string httpMethod, string url, string timeStamp)
-        {
-
-            string tosign = httpMethod + "\n" +
-                            "\n" +
-                           "\n" +
-                           "x-timestamp:" + timeStamp + "\n" +
-                           url;
-            return _applicationKey + ":" + SignString(tosign);
-        }
-
-        public async Task<int> SendSMS(string number, string message)
-        {
+            using (var httpClient = new Sinch.Core.Client(_applicationKey, _applicationSecret)) {
                 var url = baseURL + number;
-                var smsRequest = new SMSRequest { Message=message};
-                var httpClient = new HttpClient();
-                var timestamp = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture);
-                httpClient.DefaultRequestHeaders.Add("x-timestamp", timestamp);
-                httpClient.DefaultRequestHeaders.Add("Authorization", "application " + SignRequest("POST", JsonConvert.SerializeObject(smsRequest), "/v1/sms/" + number, timestamp));
+                var smsRequest = new SMSRequest { Message = message };
                 var response = await httpClient.PostAsJsonAsync(url, smsRequest);
                 response.EnsureSuccessStatusCode();
                 var result = await response.Content.ReadAsAsync<SMSResult>();
                 return result.MessageId;
+            }
         }
 
-        public async Task<SNSStatus> CheckStatus(int messageid)
-        {
+        public async Task<int> SendSMS(string fromNumber, string number, string message) {
+            var url = baseURL + number;
+            var smsRequest = new SMSRequest { Message = message, From = fromNumber };
+            string errormessage = "";
+            using (var httpClient = new Sinch.Core.Client(_applicationKey, _applicationSecret)) {
+                try {
+                    var response = await httpClient.PostAsJsonAsync(url, smsRequest);
+                    errormessage = response.ReasonPhrase;
+                    response.EnsureSuccessStatusCode();
+                    var result = await response.Content.ReadAsAsync<SMSResult>();
+                    return result.MessageId;
+                } catch (Exception ex) {
+
+                    throw new Exception(errormessage);
+
+                }
+
+            }
+        }
+
+        public async Task<SMSStatus> CheckStatus(int messageid) {
             var url = baseURL + messageid;
-            
-            var httpClient = new HttpClient();
-            var timestamp = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture);
-            httpClient.DefaultRequestHeaders.Add("x-timestamp", timestamp);
-            httpClient.DefaultRequestHeaders.Add("Authorization", "application " + SignGetRequest("GET", "/v1/sms/" + messageid, timestamp));
-            var response = await httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsAsync<SMSStatusResult>();
-            return result.Status;
-        }
 
+            using (var httpClient = new Sinch.Core.Client(_applicationKey, _applicationSecret)) {
+
+                var response = await httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                var result = await response.Content.ReadAsAsync<SMSStatusResult>();
+                return result.Status;
+            }
+        }
     }
 
-    public enum SNSStatus
-    {
+    public enum SMSStatus {
         Unknown = 1,
         Pending = 2,
         Successful = 3,
@@ -115,9 +97,8 @@ namespace Sinch.SMS
     //    }
 
     //}
-    public class SMSStatusResult
-    {
+    public class SMSStatusResult {
 
-        public SNSStatus Status { get; set; }
+        public SMSStatus Status { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace Sinch.SMS
     class SMSRequest
     {
         public string Message { get; set; }
+        public string From { get; set; }
     }
 }

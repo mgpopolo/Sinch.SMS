@@ -6,23 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sinch.SMS")]
-[assembly: AssemblyDescription("Helper library to send SMS using signed request with Sinch rest API.
-
-For sample usage see https://github.com/sinch/Sinch.SMS"
-
-For sample usage see https://github.com/sinch/Sinch.SMS"
-
-For sample usage see https://github.com/sinch/Sinch.SMS"
-
-For sample usage see https://github.com/sinch/Sinch.SMS"
-
-For sample usage see https://github.com/sinch/Sinch.SMS"
-
-For sample usage see https://github.com/sinch/Sinch.SMS")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyDescription("Helper library to send SMS using signed request with Sinch rest API...For sample usage see https://github.com/sinch/Sinch.SMS")]
 [assembly: AssemblyCompany("Sinch AB")]
 [assembly: AssemblyProduct("Sinch.SMS")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("Sinch AB")]
 [assembly: AssemblyCulture("")]
 
@@ -44,18 +30,6 @@ For sample usage see https://github.com/sinch/Sinch.SMS")]
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.10.1")]
-[assembly: AssemblyFileVersion("0.1.10.1")]
-
-
-[assembly: AssemblyCompanyAttribute("Sinch AB")]
-
-[assembly: AssemblyCopyrightAttribute("Copyright ©  2015")]
-
-[assembly: AssemblyCompanyAttribute("Sinch AB")]
-
-[assembly: AssemblyCopyrightAttribute("Copyright ©  2015")]
-
-[assembly: AssemblyCopyrightAttribute("Copyright ©  2015")]
-
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 [assembly: AssemblyCopyrightAttribute("Copyright ©  2015")]

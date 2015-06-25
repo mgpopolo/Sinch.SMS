@@ -6,9 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SendSMS_Sample")]
-[assembly: AssemblyDescription("Helper library to send SMS using signed request with Sinch rest API.
-
-For sample usage see https://github.com/sinch/Sinch.SMS")]
+[assembly: AssemblyDescription("Helper library to send SMS using signed request with Sinch rest API.\nFor sample usage see https://github.com/sinch/Sinch.SMS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sinc AB")]
 [assembly: AssemblyProduct("SendSMS_Sample")]

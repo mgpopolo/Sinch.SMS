@@ -24,7 +24,7 @@ namespace SendSMS_Sample
             Console.WriteLine("message id:" + messageid);
             var result = await client.CheckStatus(messageid);
             Console.WriteLine("Message status:" + result);
-            while (result == SNSStatus.Pending)
+            while (result == SMSStatus.Pending)
             {
                 await Task.Delay(1500);
                 result = await client.CheckStatus(messageid);
