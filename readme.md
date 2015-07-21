@@ -1,6 +1,6 @@
 #Send SMS with Sinch nuget package.
 
-First, you will need to [create a Sinch account](https://www.sinch.com/dashboard/#/signup) to get your app key and secret.
+This small nugget will help you start sending SMS in C#. First, you will need to [create a Sinch account](https://www.sinch.com/dashboard/#/signup) to get your app key and secret.
 
 Then in package manager console, run to following command
 ```PM> Install-Package Sinch.SMS```
